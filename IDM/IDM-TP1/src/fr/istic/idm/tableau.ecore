@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tab" nsURI="tab" nsPrefix="tab">
+  <eSubpackages name="tab" nsURI="tableur" nsPrefix="tableur">
+    <eClassifiers xsi:type="ecore:EClass" name="Cell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//tab/Expression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cell" eType="#//tab/Cell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CellRef" eSuperTypes="#//tab/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//tab/Cell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//tab/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BinExpression" eSuperTypes="#//tab/Expression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Fonction" eType="#//tab/String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subexprs" upperBound="-1"
+          eType="#//tab/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceTypeName="String"/>
+  </eSubpackages>
+</ecore:EPackage>
