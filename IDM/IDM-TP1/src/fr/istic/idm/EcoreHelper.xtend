@@ -24,7 +24,7 @@ class EcoreHelper {
 	def flatShort(EPackage model){
 		for ( c : model.EClassifiers.filter(EClass)){
 			print("Class name:"+c.name)
-			print("Attribut: "+c.get)
+			//print("Attribut: "+c.get)
 		}
 	}
 }
